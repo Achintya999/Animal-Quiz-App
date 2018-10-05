@@ -362,7 +362,7 @@ public class MainActivityFragment extends Fragment {
 
     public void modifyAnimalsGuessRows(SharedPreferences sharedPreferences) {
 
-        final String  NUMBER_OF_GUESS_OPTIONS = sharedPreferences.getString(MainActivity.GUESSES, null);
+        final String  NUMBER_OF_GUESS_OPTIONS = sharedPreferences.getString(Constants.GUESSES, null);
 
         numberOfAnimalsGuessRows = Integer.parseInt(NUMBER_OF_GUESS_OPTIONS) / 2;
 
@@ -384,14 +384,14 @@ public class MainActivityFragment extends Fragment {
 
     public void modifyTypeOfAnimalsInQuiz(SharedPreferences sharedPreferences) {
 
-        animalTypesInQuiz = sharedPreferences.getStringSet(MainActivity.ANIMALS_TYPE, null);
+        animalTypesInQuiz = sharedPreferences.getStringSet(Constants.ANIMALS_TYPE, null);
 
     }
 
 
     public void modifyQuizFont(SharedPreferences sharedPreferences) {
 
-        String fontStringValue = sharedPreferences.getString(MainActivity.QUIZ_FONT, null);
+        String fontStringValue = sharedPreferences.getString(Constants.QUIZ_FONT, null);
 
         switch (fontStringValue) {
 
@@ -444,7 +444,7 @@ public class MainActivityFragment extends Fragment {
 
     public void modifyBackgroundColor(SharedPreferences sharedPreferences) {
 
-        String backgroundColor = sharedPreferences.getString(MainActivity.QUIZ_BACKGROUND_COLOR, null);
+        String backgroundColor = sharedPreferences.getString(Constants.QUIZ_BACKGROUND_COLOR, null);
 
         switch (backgroundColor) {
 
