@@ -15,10 +15,6 @@ import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String GUESSES = "settings_numberOfGuesses";
-    public static final String ANIMALS_TYPE = "settings_animalsType";
-    public static final String QUIZ_BACKGROUND_COLOR = "settings_quiz_background_color";
-    public static final String QUIZ_FONT = "settings_quiz_font";
 
     private boolean isSettingsChanged = false;
 
@@ -91,14 +87,14 @@ public class MainActivity extends AppCompatActivity {
 
             isSettingsChanged = true;
 
-            if (key.equals(GUESSES)) {
+            if (key.equals(Constants.GUESSES)) {
 
                 myAnimalQuizFragment.modifyAnimalsGuessRows(sharedPreferences);
                 myAnimalQuizFragment.resetAnimalQuiz();
 
-            } else if (key.equals(ANIMALS_TYPE)) {
+            } else if (key.equals(Constants.ANIMALS_TYPE)) {
 
-                Set<String> animalTypes = sharedPreferences.getStringSet(ANIMALS_TYPE, null);
+                Set<String> animalTypes = sharedPreferences.getStringSet(Constants.ANIMALS_TYPE, null);
 
                 if (animalTypes != null && animalTypes.size() > 0) {
 
@@ -109,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     animalTypes.add(getString(R.string.default_animal_type));
-                    editor.putStringSet(ANIMALS_TYPE, animalTypes);
+                    editor.putStringSet(Constants.ANIMALS_TYPE, animalTypes);
                     editor.apply();
 
                     Toast.makeText(MainActivity.this,
@@ -117,11 +113,11 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-            } else if (key.equals(QUIZ_FONT)) {
+            } else if (key.equals(Constants.QUIZ_FONT)) {
 
                 myAnimalQuizFragment.modifyQuizFont(sharedPreferences);
                 myAnimalQuizFragment.resetAnimalQuiz();
-            } else if (key.equals(QUIZ_BACKGROUND_COLOR)) {
+            } else if (key.equals(Constants.QUIZ_BACKGROUND_COLOR)) {
 
                 myAnimalQuizFragment.modifyBackgroundColor(sharedPreferences);
                 myAnimalQuizFragment.resetAnimalQuiz();
